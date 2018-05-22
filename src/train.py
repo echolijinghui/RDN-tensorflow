@@ -4,7 +4,7 @@ from datetime import datetime
 from data_tools import *
 from model import model
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 def train():
     # Prepare Data For Training
@@ -114,6 +114,9 @@ batch_size = 32
 val_batch_size = 16
 image_size = 48 # The size of LR image input
 train()
+
+
+
 
 
 
