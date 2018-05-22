@@ -90,7 +90,7 @@ def model(images):
     images = images/255.0
     images_mean = tf.reduce_mean(images)
     images = images - images_mean
-
+    print images.shape
     F_1 = tf.nn.conv2d(images, weightsS['w_S_1'], strides=[1,1,1,1], padding='SAME') + biasesS['b_S_1']
     F0 = tf.nn.conv2d(F_1, weightsS['w_S_2'], strides=[1,1,1,1], padding='SAME') + biasesS['b_S_2']
     
@@ -108,4 +108,11 @@ def model(images):
     IHR = tf.clip_by_value((IHR + images_mean)*255.0, 0.0, 255.0)
 
     return IHR
+
+
+
+
+
+
+
 
